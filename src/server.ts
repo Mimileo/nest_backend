@@ -11,7 +11,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+app.use(cors(
+    {
+        origin: process.env.NODE_ENV === 'production' 
+        ? 'https://Mimileo.github.io' : 'http://localhost:5173',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+    }
+))
 
 // Basic route
 app.get('/', (req: Request, res: Response) => {
