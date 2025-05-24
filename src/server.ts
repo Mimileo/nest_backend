@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors(
     {
         origin: process.env.NODE_ENV === 'production' 
-        ? 'https://Mimileo.github.io/nest-shop/' : 'http://localhost:5173',
+        ? 'https://mimileo.github.io' : 'http://localhost:5173',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     }
